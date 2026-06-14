@@ -61,3 +61,9 @@ if (fd == -1) {
 close(fd);
 unlink(template);
 ```
+## Byte conversions
+1KB - 1 000 bytes
+
+1MB - 1 000 000 bytes
+
+1GB - 1 000 000 000 bytes
