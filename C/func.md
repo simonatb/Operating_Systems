@@ -67,3 +67,22 @@ unlink(template);
 1MB - 1 000 000 bytes
 
 1GB - 1 000 000 000 bytes
+## Watchdog
+```
+int status;
+int dead = waitpid(-1, &status, WNOHANG);
+if (dead > 0) {
+    for (int i = 0; i < 3; i++) {
+        if (pids[i] == dead) {
+            fprintf(stderr, "sensor %d died\n", i);
+            start_sensor(i);
+            break;
+        }
+    }
+}
+```
+## Format printing
+int snprintf(char *buffer, size_t size, const char *format, ...); size- with the terminating zero; to a string
+
+int fprintf(FILE *stream, const char *format, ...); - to a stream
+
